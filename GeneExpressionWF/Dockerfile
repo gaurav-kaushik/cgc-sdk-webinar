@@ -1,7 +1,9 @@
-# How to use Dockerfiles - Bioconductor
+# How to use Dockerfiles
 
-# Start with a the release_base image from Bioconductor
-FROM bioconductor/release_base:latest
+# Start with the release_base image from Bioconductor
+FROM rocker/hadleyverse
+
+MAINTAINER "Gaurav Kaushik" <gaurav@sevenbridges.com>
 
 # Update the container
 RUN apt-get update --yes
@@ -15,8 +17,9 @@ RUN Rscript -e 'source("http://bioconductor.org/biocLite.R"); biocLite(c("BiocIn
 RUN Rscript -e 'install.packages("pheatmap")'
 
 # Copy the R script and test files
-COPY diff_exp_rnaseq.R .
-COPY brca* ./
+ADD diff_exp_rnaseq.R /usr/local/bin/
+ADD brca* ./
+RUN chmod a+x /usr/local/bin/diff_exp_rnaseq.R
 # When testing the tool, modify diff_exp_rna_seq.R (see comments ~line 18)
 
 # Set CMD to fire up the terminal when you run the container

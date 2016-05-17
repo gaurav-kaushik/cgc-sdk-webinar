@@ -71,3 +71,6 @@ dev.off()
 print("PDF plot saved")
 
 ########
+
+# To run in the command line of your Docker container:
+# Rscript diff_exp_rnaseq.R brca_gene.csv brca_meta.csv csv_filename pdf_filename
