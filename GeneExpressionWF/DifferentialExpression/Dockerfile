@@ -1,7 +1,7 @@
 # How to use Dockerfiles
 
 # Start with the release_base image from Bioconductor
-FROM rocker/hadleyverse
+FROM bioconductor/release_base
 
 MAINTAINER "Gaurav Kaushik" <gaurav@sevenbridges.com>
 
@@ -19,8 +19,8 @@ RUN Rscript -e 'install.packages("pheatmap")'
 # Copy the R script and test files
 ADD diff_exp_rnaseq.R /usr/local/bin/
 ADD brca* ./
-RUN chmod a+x /usr/local/bin/diff_exp_rnaseq.R
-# When testing the tool, modify diff_exp_rna_seq.R (see comments ~line 18)
+RUN chmod a+x /usr/local/bin/diff.R
+# When testing the tool, modify diff.R (see comments ~line 18)
 
 # Set CMD to fire up the terminal when you run the container
 CMD ["/bin/bash"]

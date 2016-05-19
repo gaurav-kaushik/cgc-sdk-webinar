@@ -17,8 +17,8 @@ print("CSV files read")
 ## For testing only:
 # gene = read.csv("brca_gene.csv", header = TRUE, row.names=1)
 # meta = read.csv("brca_meta.csv", header = TRUE)
-gene = gene[,1:20]
-meta = meta[1:20,]
+#gene = gene[,1:20]
+#meta = meta[1:20,]
 
 # Get the Differential Expression results
 print("Initializing Differential Expression Analysis -- go grab a coffee :)")
@@ -55,7 +55,9 @@ colnames(df) <- "sample_type"
 pheatmap(log2.norm.counts, cluster_rows=FALSE, show_rownames=FALSE, cluster_cols=FALSE, annotation_col=df)
 
 # Heatmap -- Sample-Sample Distance 
-rld <- rlog(dds,blind=FALSE)
+#rld <- rlog(dds,blind=FALSE)
+vsd <- varianceStabilizingTransformation(dds, blind=FALSE)
+rld <- vsd # for now, to swap out rld
 sampleDists <- (dist(t(assay(rld))))
 sampleDistMatrix <- as.matrix(sampleDists)
 colnames(sampleDistMatrix) <- NULL
@@ -73,4 +75,4 @@ print("PDF plot saved")
 ########
 
 # To run in the command line of your Docker container:
-# Rscript diff_exp_rnaseq.R brca_gene.csv brca_meta.csv csv_filename pdf_filename
+# Rscript diff.R brca_gene.csv brca_meta.csv csv_filename pdf_filename
