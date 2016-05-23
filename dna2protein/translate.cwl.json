@@ -76,10 +76,7 @@
       "dockerPull": "rfranklin/pythondev"
     }
   ],
-  "baseCommand": [
-    "python",
-    "translate.py"
-  ],
+  "baseCommand": ["python","translate.py"],
   "stdin": "",
   "stdout": {
     "class": "Expression",
@@ -89,45 +86,5 @@
   "successCodes": [],
   "temporaryFailCodes": [],
   "arguments": [],
-  "sbg:copyOf": "gauravCGC/fog/translate-argparse/12",
-  "sbg:sbgMaintained": false,
-  "sbg:job": {
-    "inputs": {
-      "output_filename": "output_filename",
-      "input_file": {
-        "path": "input_mRNA.txt",
-        "size": 0,
-        "class": "File",
-        "secondaryFiles": []
-      }
-    },
-    "allocatedResources": {
-      "mem": 1000,
-      "cpu": 1
-    }
-  },
-  "sbg:revision": 0,
-  "sbg:validationErrors": [],
-  "sbg:contributors": [
-    "gauravCGC"
-  ],
-  "sbg:modifiedOn": 1453393567,
-  "sbg:project": "gauravCGC/tutorials",
-  "sbg:latestRevision": 0,
-  "sbg:id": "gauravCGC/tutorials/Translate/0",
-  "sbg:revisionsInfo": [
-    {
-      "sbg:revision": 0,
-      "sbg:modifiedBy": "gauravCGC",
-      "sbg:modifiedOn": 1453393567
-    }
-  ],
-  "baseCmd": [
-    ""
-  ],
-  "sbg:toolAuthor": "Gaurav Kaushik/Seven Bridges",
-  "sbg:cmdPreview": "python translate.py -r input_mRNA.txt > output_filename.txt",
-  "sbg:createdBy": "gauravCGC",
-  "sbg:createdOn": 1453393567,
-  "sbg:modifiedBy": "gauravCGC"
+  "baseCmd": [""]
 }

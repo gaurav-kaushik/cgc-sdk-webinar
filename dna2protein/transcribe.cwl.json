@@ -29,7 +29,6 @@
       "description": "Input file",
       "inputBinding": {
         "position": 3,
-        "sbg:cmdInclude": true,
         "prefix": "-d",
         "separate": true
       },
@@ -100,49 +99,5 @@
   "successCodes": [],
   "temporaryFailCodes": [],
   "arguments": [],
-  "sbg:categories": [
-    "Tutorials"
-  ],
-  "sbg:sbgMaintained": false,
-  "sbg:job": {
-    "inputs": {
-      "output_filename": "rna_test_file",
-      "input_file": {
-        "path": "/path/to/input_file.ext",
-        "size": 0,
-        "class": "File",
-        "secondaryFiles": []
-      },
-      "verbose": true
-    },
-    "allocatedResources": {
-      "mem": 1000,
-      "cpu": 1
-    }
-  },
-  "sbg:revision": 0,
-  "sbg:validationErrors": [],
-  "sbg:contributors": [
-    "gauravCGC"
-  ],
-  "sbg:modifiedOn": 1453392569,
-  "sbg:project": "gauravCGC/tutorials",
-  "sbg:latestRevision": 0,
-  "sbg:id": "gauravCGC/tutorials/Transcribe/0",
-  "sbg:revisionsInfo": [
-    {
-      "sbg:revision": 0,
-      "sbg:modifiedBy": "gauravCGC",
-      "sbg:modifiedOn": 1453392569
-    }
-  ],
-  "baseCmd": [
-    ""
-  ],
-  "sbg:toolAuthor": "Gaurav Kaushik/Seven Bridges",
-  "sbg:copyOf": "gauravCGC/fog/transcribe-argparse/16",
-  "sbg:cmdPreview": "python transcribe_argparse.py -d /path/to/input_file.ext > rna_test_file.txt",
-  "sbg:createdBy": "gauravCGC",
-  "sbg:createdOn": 1453392569,
-  "sbg:modifiedBy": "gauravCGC"
+  "baseCmd": [""]
 }
